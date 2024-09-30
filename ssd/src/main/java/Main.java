@@ -3,9 +3,8 @@ import controller.SsdController;
 import view.SsdView;
 public class Main {
     public static void main(String[] args) {
-        SsdRepository ssdRepository = new SsdRepository();
-        SsdView ssdView = new SsdView();
-        SsdController ssdController = new SsdController(ssdRepository, ssdView);
+        SsdController ssdController = new SsdController( new SsdRepository(), new SsdView());
+
         try {
             // 명령어가 'W'일 때 (쓰기 명령)
             if (args[0].equalsIgnoreCase("W")) {
@@ -16,7 +15,6 @@ public class Main {
                 int index = Integer.parseInt(args[1]);
                 String value = args[2];
                 ssdController.write(index, value);
-                System.out.println("Write successful");
 
                 // 명령어가 'R'일 때 (읽기 명령)
             } else if (args[0].equalsIgnoreCase("R")) {
@@ -26,8 +24,6 @@ public class Main {
                 }
                 int index = Integer.parseInt(args[1]);
                 ssdController.read(index);
-                // String result = ssdRepository.read(index);
-                System.out.println("Read result");
 
                 // 잘못된 명령어 처리
             } else {

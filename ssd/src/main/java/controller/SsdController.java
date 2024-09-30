@@ -13,7 +13,7 @@ public class SsdController {
 
     public void read(int index){
         String result = ssdRepository.read(index);
-        // 뷰 해줘
+        ssdView.setResult(result);
     }
 
     public void write(int index, String string){
