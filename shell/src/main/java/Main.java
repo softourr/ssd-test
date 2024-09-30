@@ -49,27 +49,6 @@ public class Main {
                     Controller.testApp2();
                     break;
 
-                case "testapp3":
-                    Controller.testApp3();
-                    break;
-
-                case "testapp4":
-                    Controller.testApp4();
-                    break;
-
-                case "testapp5":
-                    Controller.testApp5();
-                    break;
-
-                case "testapp6":
-                    Controller.testApp6();
-                    break;
-
-                case "testapp7":
-                    Controller.testApp7();
-                    break;
-
-
                 default:
                     System.out.println("알 수 없는 명령어 입니다: " + tokens[0]);
                     break;
