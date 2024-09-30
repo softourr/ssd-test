@@ -1,3 +1,6 @@
+import Controller.Controller;
+
+import java.io.Console;
 import java.util.Scanner;
 
 public class Main {
@@ -11,17 +14,38 @@ public class Main {
             command = sc.nextLine().trim();
             String[] tokens = command.split(" ");
 
-            if (tokens[0].equals("exit")) {
+            if (tokens[0].equals("exit")){
                 System.out.println("BYE");
                 break;
             }
 
-            if (tokens[0].equals("help")) {
-                printHelp();
-                continue;
+            switch (tokens[0]) {
 
+
+                case "help":
+                    printHelp();
+                    break;  // continue는 switch-case에서 break로 대체
+
+                case "read":
+                    Controller.read(tokens[1]);
+                    break;
+
+                case "write":
+                    Controller.write(tokens[1], tokens[2]);
+                    break;
+
+                case "fullread":
+                    Controller.fullRead();
+                    break;
+
+                case "fullwrite":
+                    Controller.fullWrite();
+                    break;
+
+                default:
+                    System.out.println("Unknown command: " + tokens[0]);
+                    break;
             }
-
         }
     }
 
