@@ -9,16 +9,10 @@ public class Controller {
     public static void read(String idx) {
         try {
             // 명령어 설정
-            ProcessBuilder processBuilder = new ProcessBuilder("java", "-jar", "ssd", "read", idx);
+            ProcessBuilder processBuilder = new ProcessBuilder("java", "-jar", "ssd", "R", idx);
 
             // 명령어 실행
             Process process = processBuilder.start();
-
-
-            // 프로세스 종료 대기
-            int exitCode = process.waitFor();
-            System.out.println("Exited with error code : " + exitCode);
-
 
             // result.txt 파일 확인
             File resultFile = new File("result.txt");
@@ -50,7 +44,7 @@ public class Controller {
 
         try {
             // 명령어 설정
-            ProcessBuilder processBuilder = new ProcessBuilder("java", "-jar", "ssd", "write", idx, value);
+            ProcessBuilder processBuilder = new ProcessBuilder("java", "-jar", "ssd", "W", idx, value);
 
             // 명령어 실행
             Process process = processBuilder.start();
@@ -60,7 +54,7 @@ public class Controller {
             System.out.println("Exited with error code : " + exitCode);
 
             // 출력
-            System.out.println("저장되었다!");
+            System.out.println("저장완료!");
 
         } catch (Exception e) {
             e.printStackTrace();
