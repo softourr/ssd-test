@@ -20,8 +20,6 @@ public class Main {
             }
 
             switch (tokens[0]) {
-
-
                 case "help":
                     printHelp();
                     break;  // continue는 switch-case에서 break로 대체
@@ -43,7 +41,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Unknown command: " + tokens[0]);
+                    System.out.println("알 수 없는 명령어 입니다: " + tokens[0]);
                     break;
             }
         }
