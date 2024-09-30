@@ -7,6 +7,11 @@ import java.io.FileReader;
 
 public class Controller {
     public static void read(String idx) {
+        if (Integer.parseInt(idx) < 0 || Integer.parseInt(idx) > 99 ){
+            System.out.println("유효하지 않은 값입니다");
+            return;
+        }
+
         try {
             // 명령어 설정
             ProcessBuilder processBuilder = new ProcessBuilder("java", "-jar", "ssd", "R", idx);
@@ -37,7 +42,7 @@ public class Controller {
 
     public static void write(String idx, String value) {
         if (Integer.parseInt(idx) < 0 || Integer.parseInt(idx) > 99 ){
-            System.out.println("유효하지 않은 값이다 닝겐");
+            System.out.println("유효하지 않은 값입니다");
             return;
         }
 
