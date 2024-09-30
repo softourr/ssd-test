@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        String command;
+        String command, tmp;
         while(true) {
 
             System.out.print("SHELL > ");
@@ -27,7 +27,8 @@ public class Main {
                     break;  // continue는 switch-case에서 break로 대체
 
                 case "read":
-                    Controller.read(tokens[1]);
+                    tmp = Controller.read(tokens[1]);
+                    System.out.println(tmp);
                     break;
 
                 case "write":
@@ -41,6 +42,35 @@ public class Main {
                 case "fullwrite":
                     Controller.fullWrite();
                     break;
+
+                case "testapp1":
+                    Controller.testApp1();
+                    break;
+
+                case "testapp2":
+                    Controller.testApp2();
+                    break;
+
+                case "testapp3":
+                    Controller.testApp3();
+                    break;
+
+                case "testapp4":
+                    Controller.testApp4();
+                    break;
+
+                case "testapp5":
+                    Controller.testApp5();
+                    break;
+
+                case "testapp6":
+                    Controller.testApp6();
+                    break;
+
+                case "testapp7":
+                    Controller.testApp7();
+                    break;
+
 
                 default:
                     System.out.println("Unknown command: " + tokens[0]);
